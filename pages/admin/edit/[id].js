@@ -19,7 +19,6 @@ import React from 'react'
 import supabase from '../../../config/supabaseClient';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router'
-import EditForm from '../../../components/editForm';
 import Link from "next/link";
 import DeleteModal from "../../../components/DeleteModal";
 import Image from "next/image";
@@ -302,7 +301,6 @@ const UserDetails = () => {
         <DeleteModal onClose={handleClose} visible={open}/>
       </div>
     </>
-    // <EditForm />
   )
 }
 

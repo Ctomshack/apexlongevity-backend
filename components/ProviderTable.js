@@ -30,7 +30,7 @@ export default function ProviderTable() {
     }
 
       fetchProviders()
-  }, [])
+  }, [fetchError])
 
   // console.log(providers)
 
