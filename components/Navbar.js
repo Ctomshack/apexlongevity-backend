@@ -2,9 +2,10 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const navigation = [
-  { name: 'Dashboard', href: '/admin/Dashboard', current: true },
+  { name: 'All Providers', href: '/admin/Dashboard', current: true },
 //   { name: 'Add Provider', href: '/admin/NewProvider', current: false },
 ]
 
@@ -32,16 +33,16 @@ export default function Navbar() {
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <img
-                    className="block h-8 w-auto lg:hidden"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                    alt="Your Company"
+                <Link href="/admin/Dashboard">
+                  <Image
+                    className="w-auto h-8 sm:h-10 cursor-pointer"
+                    src='/navlogo.png'
+                    alt=""
+                    height={65}
+                    width={200}
+                    priority='true'
                   />
-                  <img
-                    className="hidden h-8 w-auto lg:block"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                    alt="Your Company"
-                  />
+                </Link>
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">

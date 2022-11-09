@@ -86,11 +86,8 @@ export default function NewProvider() {
     const { data, error } = await supabase
       .from('Providers')
       .insert([{Name, Address, City, State, Phone}])
+      .select()
 
-      if (error) {
-        setFormError('Please fill in all fields before submitting the form.')
-        console.log(error)
-      }
       if (data) {
         console.log(data)
         setFormError(null)
@@ -98,6 +95,11 @@ export default function NewProvider() {
         setTimeout(() => {
           setShowSuccessMessage(false)
         }, 3000)
+
+      if (error) {
+        setFormError('Please fill in all fields before submitting the form.')
+        console.log(error)
+      }
       }
   }
 
@@ -233,7 +235,7 @@ export default function NewProvider() {
               </div>
               {formError && <p className="error">{formError}</p>}
               {showSuccessMessage && (
-          <span>
+          <span className="text-green-500 bg-green-100 rounded-sm px-6 py-3 shadow-md">
             New Provider successfully added!
           </span>
         )}

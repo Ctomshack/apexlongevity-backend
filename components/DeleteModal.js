@@ -77,7 +77,7 @@ export default function DeleteModal({ visible, onClose }) {
                     </div>
                   </div>
                 </div>
-                <div className="mt-5 sm:mt-8 sm:grid sm:grid-flow-row-dense sm:grid-cols-2 sm:gap-3">
+                <div className="mt-5 sm:mt-8 sm:grid sm:grid-flow-row-dense sm:grid-cols-1 sm:gap-3 flex items-center justify-center">
                   <Link href='/admin/Dashboard'>
                   <button
                     type="button"
