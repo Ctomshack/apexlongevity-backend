@@ -7,7 +7,6 @@ const Pagination = ({ providersPerPage, totalProviders, paginate, currentPage })
     for (let i = 1; i <= Math.ceil(totalProviders / providersPerPage); i++) {
         pageNumbers.push(i)
     }
-    console.log(pageNumbers)
 
   return (
     <div className="flex items-center justify-center border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
