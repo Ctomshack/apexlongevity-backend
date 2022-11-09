@@ -60,6 +60,7 @@ const UserDetails = () => {
       }
 
       if(data) {
+        console.log(data)
         setFormError(null)
         setShowSuccessMessage(true)
         setTimeout(() => {
@@ -327,7 +328,7 @@ const UserDetails = () => {
                 </button>
                 <div className="flex justify-end">
                 <button
-                  type="submit"
+                  type="button"
                   onClick={() => setOpen(true)}
                   className="ml-3 inline-flex justify-center rounded-md border border-transparent bg-red-500 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2"
                 >
@@ -338,8 +339,8 @@ const UserDetails = () => {
               </div>
               {formError && <p className="error">{formError}</p>}
               {showSuccessMessage && (
-          <span>
-            New Provider successfully added!
+          <span className="text-green-500 bg-green-100 rounded-sm px-6 py-3 shadow-md">
+            Successfully updated Provider details!
           </span>
         )}
             </form>
