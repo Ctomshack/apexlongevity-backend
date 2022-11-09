@@ -2,6 +2,8 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import ProviderTable from './ProviderTable'
+import Link from 'next/link'
+import Image from 'next/image'
 
 const navigation = [
   { name: 'Dashboard', href: '#', current: true },
@@ -35,11 +37,16 @@ export default function Shell() {
                 <div className="flex h-16 items-center justify-between">
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
-                      <img
-                        className="h-8 w-8"
-                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                        alt="Your Company"
-                      />
+                    <Link href="/admin/Dashboard">
+                  <Image
+                    className="w-auto h-8 sm:h-10 cursor-pointer"
+                    src='/navlogo.png'
+                    alt=""
+                    height={65}
+                    width={200}
+                    priority='true'
+                  />
+                </Link>
                     </div>
                     <div className="hidden md:block">
                       <div className="ml-10 flex items-baseline space-x-4">
