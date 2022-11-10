@@ -1,26 +1,15 @@
 import '../styles/globals.css'
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
 import { SupabaseClient } from '@supabase/supabase-js';
 import { useRouter } from 'next/router'
-import supabase from '../config/supabaseClient';
 import { createBrowserSupabaseClient } from '@supabase/auth-helpers-nextjs'
-import { SessionContextProvider } from '@supabase/auth-helpers-react'
+import { SessionProvider } from "next-auth/react"
 
-function MyApp({ Component, pageProps }) {
-  const router = useRouter()
-  // Create a new supabase browser client on every first render.
-  const [supabaseClient] = useState(() => createBrowserSupabaseClient())
+function MyApp({ Component, pageProps: { session, ...pageProps } }) {
 
   return (
-    <>
-    <SessionContextProvider
-      supabaseClient={supabaseClient}
-      initialSession={pageProps.initialSession}
-    >
-      <Component {...pageProps} />
-    </SessionContextProvider>
-    </>
+    <SessionProvider session={pageProps.session}>
+      <Component {...pageProps}/>
+    </SessionProvider>
   )
 }
 
